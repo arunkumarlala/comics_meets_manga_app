@@ -4,46 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comics meets Manga Kids Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .heading{
+            text-align: center;
+            border-style: groove;
+            border-color: blue;
+            background-color: rgb(103, 103, 243);
+            color: whitesmoke;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Comics meets Manga For Kids</h1>
-    <div>
-        <table>
-            <tr>
-                <td>Genre:</td>
-                <td><select name="genre">
-                    <option value="action">Action</option>
-                    <option value="adventure">Adventure</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="drama">Drama</option>
-                    <option value="slice of life">Slice of life</option>
-                    <option value="fantacy">Fantacy</option>
-                    <option value="sports">Sports</option>
-                    <option value="mystery">Mystery</option>
-                    <option value="military">Military</option>
-                    
-                </select></td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <td>Menu:</td>
-                <td><select name="menu">
-                    <option value="menu">menu</option>
-                    <option value="home">Home</option>
-                    <option value="genre">genre  </option>
-                    <option value="Click&paint">Click & Paint</option>
-                    <option value="modify character">Modify character</option>
-                    <option value="wallpaper">Wall paper</option>
-                    <option value="forums">Forums</option>
-                  
-                    
-                </select></td>
-            </tr>
-        </table>
-    </div>
+    <div class="container">
+        <h1 class="heading">Comics meets Manga</h1>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary">comics</button>
+            <button type="button" class="btn btn-secondary">manga</button>
+            
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                    genre
+                </button>
+                <ul class="dropdown-menu bg-success">
+                    <li><a class="dropdown-item" href="#">home</a></li>
+                    <li><a class="dropdown-item" href="#">aboutus</a></li>
+                    <li><a class="dropdown-item" href="#">comics</a></li>
+                    <li><a class="dropdown-item" href="#">Japnese Manga</a></li>
+                    <li><a class="dropdown-item" href="#">Korean manga</a></li>
+                    <li><a class="dropdown-item" href="#">Chinese manga</a></li>
+                    <li><a class="dropdown-item" href="#">Wallpaper</a></li>
+                    <li><a class="dropdown-item" href="#">Click&paint</a></li>
+                    <li><a class="dropdown-item" href="#">Modify character</a></li>
+                    <li><a class="dropdown-item" href="#">Forums</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                    menu
+                </button>
+                <ul class="dropdown-menu bg-success">
+                    <li><a class="dropdown-item" href="#">action</a></li>
+                    <li><a class="dropdown-item" href="#">adventure</a></li>
+                    <li><a class="dropdown-item" href="#">comedy</a></li>
+                    <li><a class="dropdown-item" href="#">sports</a></li>
+                    <li><a class="dropdown-item" href="#">drama</a></li>
+                    <li><a class="dropdown-item" href="#">fantasy</a></li>
+                    <li><a class="dropdown-item" href="#">romance</a></li>
+                    <li><a class="dropdown-item" href="#">mystery</a></li>
+                    <li><a class="dropdown-item" href="#">historical</a></li>
+                    <li><a class="dropdown-item" href="#">horror</a></li>
+                    <li><a class="dropdown-item" href="#">psycological</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-secondary">
+                <a href="./index.html">logout</a></button>
+          </div>
+    
+          
     <table  cellspacing="100">
         <tr>
 <th>RECENTS</th>
