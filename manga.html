@@ -93,7 +93,7 @@
     <!-- <h1 class="heading">Comics meets Manga</h1> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./manga.html">Manga</a>
+        <!-- <a class="navbar-brand" href="./manga.html">Manga</a> -->
         <a class="navbar-brand" href="#">Comics</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -146,7 +146,7 @@
         <div >
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" id="searchele" onclick="searchbar()" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
         
@@ -172,22 +172,22 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="./asserts/db.jpg" class="center" width="300" height="250">
+              <img src="./asserts/recent 2.jpg" class="center" width="300" height="250">
              
             </div>
       
             <div class="item">
-              <img src="./asserts/bm.jpg"  class="center" width="300" height="250">
+              <img src="./asserts/recent 6.jpg"  class="center" width="300" height="250">
             </div>
           
             <div class="item">
-              <img src="./asserts/aot.png" class="center" width="300" height="250">
+              <img src="./asserts/popular 1.jpg" class="center" width="300" height="250">
             </div>
             <div class="item">
-                <img src="./asserts/gw2.jpg"  class="center" width="300" height="250">
+                <img src="./asserts/popular 3.jpg"  class="center" width="300" height="250">
               </div>
               <div class="item">
-                <img src="./asserts/op.jpg" class="center" width="300" height="250">
+                <img src="./asserts/popular 5.jpg" class="center" width="300" height="250">
               </div>
           </div>
       
@@ -436,7 +436,7 @@
     </div>
       
     <!-- card carosel 4 -->
-    <h1 style="color: azure;">MANGA</h1>
+    <h1 style="color: azure;">MOST WATCHED</h1>
     <div class="container text-center my-3">
      <div class="row mx-auto my-auto justify-content-center">
        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -513,7 +513,7 @@
    </div>
 
    <!-- card carosel 5 -->
-   <h1 style="color: azure;">COMICS</h1>
+   <h1 style="color: azure;">COMING SOON</h1>
    <div class="container text-center my-3">
     <div class="row mx-auto my-auto justify-content-center">
       <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -606,13 +606,6 @@ items.forEach((el) => {
     next = next.nextElementSibling
 }
 })
-
-let search=document.getElementById('searchele').value
-function searchbar(){
-  if(search=="dragon ball"){
-  window.location.href = './aboutus.html'
-}
-}
 </script>
 </div>
 

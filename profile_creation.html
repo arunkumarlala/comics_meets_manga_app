@@ -9,15 +9,24 @@
     <style>
         .heading{
             text-align: center;
-            border-style: groove;
+            /* border-style: groove;
             border-color: blue;
-            background-color: rgb(103, 103, 243);
-            color: whitesmoke;
+            background-color: rgb(103, 103, 243); */
+            color: rgb(234, 228, 228);
+        }
+        body {
+       background-size: cover;
+        background-image: url("./asserts/jl\ bg.jpg");
+        background-repeat: no-repeat;
+        }
+        td {
+            color: azure;
+
         }
     </style>
 </head>
 <body>
-    <div class="container" style="background-color: rgb(176, 194, 194);">
+    <div class="container" >
         <h2 class="heading">User Profile creation</h2>
         <form action="./index.html" method="post">
             <table>
@@ -27,13 +36,22 @@
                 </tr>
                 <tr>
                     <td>Profile image :</td>
-                    <td><img src="https://cdn5.vectorstock.com/i/1000x1000/17/84/cute-young-man-avatar-character-cartoon-style-vector-36211784.jpg" width="100" height="100"/></td>
+                    <td>
+                        <img  id="msg" src="./asserts/profile3.jpg" width="100" height="100">
+
+                    </td>
                 </tr>
                 <tr>
                     <td>Access to Contents :</td>
                     <td>
-                        <input type="radio" class="form-check-input" name="access" value="adults"/> Adult
-                        <input type="radio" class="form-check-input" name="access" value="kids"/> Kid
+                        <button type="button" onclick="changeimagem()" id="male">male</button>
+                        <img id="myImage" src="./asserts/profile3.jpg" width="100" height="100">
+               
+                        <button type="button" onclick="changeimagef()" id="female" >female</button>
+                        <img id="myImage1" src="./asserts/profile.jpg" width="100" height="100">
+                        
+                        <button type="button" onclick="changeimagek()" id="kids" >kids</button>
+                        <img id="myImage2" src="./asserts/prokids2.jpg" width="100" height="100">
                     </td>
                 </tr>    
                 <tr>
@@ -50,19 +68,31 @@
                 </tr>
                
             </table>
-        </form>
         
-    </div>
-    <div class="row p-2">
+    <div class="row" >
         
-      
+      <div class="col-m-2">
             <button type="button" class="btn btn-link">
                 <a href="./welcome_page.html">Next</a>
             </button></div>
-           <div class="row"><input type="reset" value="Cancel"/>
+           <div class="col-m-2"><button type="button" class="btn-link" value="Cancel">
+            <a href="./login.html">Cancel</a></button>
            </div> 
     
-    
-    
+    </div>
+</form>
+        
+</div>
+    <script>
+function changeimagef(){
+    document.getElementById('msg').src='./asserts/profile.jpg';
+}
+function changeimagem(){
+    document.getElementById('msg').src='./asserts/profile3.jpg';
+}
+function changeimagek(){
+    document.getElementById('msg').src='./asserts/prokids2.jpg';
+}
+    </script>
 </body>
 </html>

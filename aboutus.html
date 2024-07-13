@@ -16,10 +16,23 @@
             background-color: rgb(103, 103, 243);
             color: whitesmoke;
         }
+        body {
+       background-size: cover;
+        background-image: url("./asserts/bg\ hxh.jpg");
+        background-repeat: no-repeat;
+        }
+        p,dd,ul,li{
+            color: rgb(180, 15, 15);
+            font-size: x-large;
+        }
+        dt{
+            color: rgb(243, 234, 234);
+            font-size: x-large;
+        }
     </style>
 </head>
 <body>
-    <div class="container " style="background-color: rgb(176, 194, 194); ">
+    <div class="container " >
         <h2 class="heading">ABOUT US</h2>
     <p>This app takes us through various comics and manga from japanese, korean and chinese language. This app also includes wallpapers of our favorite comics and characters and consists of various activities like click and paint and we can change attires and attributes of the character.</p>
     <dl>
@@ -42,6 +55,24 @@
         <a href="./profile_creation.html">Create Your Profile Here</a>
     </button>
 </div>
+<script src="./controller.js"></script>  
+    <script>
+        function checkLogin(){
+            let uName = document.getElementById('uName').value;
+            let pswd = document.getElementById('pswd').value;
+
+            let sess = new UserSession();
+            sess.checkLogin(uName, pswd);
+
+            // if(uName == 'prajeethan' && pswd == 'playboy'){
+            //     localStorage.setItem('USER', uName);
+            //     window.location.href = './rrapp_aboutus.html';
+            // }else{
+            //     localStorage.removeItem('USER');
+            //     alert('Invalid Username/Password');
+            // }
+        }
+    </script>
 </body>
 </html>
 
