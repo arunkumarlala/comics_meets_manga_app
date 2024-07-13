@@ -1,11 +1,11 @@
 function verifySession(){
     let user = sessionStorage.getItem('USER') || "";
     if(user == ""){
+
       alert("Session Expired/ Not logged In.. Please login again");
       window.location.href = "./index.html";
     }
   }
-
 class UserSession{
     checkLogin(uName, pswd){
         // let uName = document.getElementById('uName').value;
