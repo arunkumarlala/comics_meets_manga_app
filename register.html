@@ -27,11 +27,15 @@
 <body>
     <div class="container">
         <h2 class="heading">User Registration</h2>
-        <form action="./index.html" method="post">
+        
+        <form action="./login.html" method="post">
             <table>
+                
+                    <span id="pMsg"></span>
+                
                 <tr class="p-3">
                     <td>Name :</td>
-                    <td><input type="text" class="form-control" name="Name"/></td>
+                    <td><input type="text" id="uName" class="form-control" name="Name"/></td>
                 </tr>
                 <tr>
                     <td>Email :</td>
@@ -74,11 +78,14 @@
                     </tr>    
                 <tr>
                     <td>Password :</td>
-                    <td><input type="password" class="form-control" name="pswd"/></td>
+                    <td><input type="password" id="pswd" onfocusout="regex()" class="form-control" name="pswd"/></td>
+                    <span id="pswdMsg"></span>
                 </tr>
                 <tr>
-                    <td>Confirm Password :</td>
-                    <td><input type="password" class="form-control" name="cfPswd"/></td>
+                    <div class="container" > <td>Confirm Password :</td>
+                       <td><input type="password" id="cpswd" onfocusout="checkpswd()" class="form-control" name="cfPswd"/></td>
+                       <span id="cpswdMsg"></span>
+                   </div>
                 </tr>
                 <tr>
                     <td>Email :</td>
@@ -87,19 +94,22 @@
                
                 <tr>
                     <td>
-                        <input type="checkbox" name="termscondi" value="terms"/> I agree to the terms and conditions of the app Rescue Rapid
+                        <input type="checkbox" name="termscondi" value="terms"/> I agree to the terms and conditions of the cmm
                     </td>
                 </tr>
             </table>
                 <div>
                     <tr>
-                    </td>
-                        <button type="button" class="btn-link ">
-                            <a href="./login.html">Register</a>
+                    <td>
+                        <button type="button" onclick="adduser()" class="btn btn-primary">
+                            Register
                         </button>
-                        <button type="button" class="btn-link" value="Cancel">
+                        <button type="button" class="btn-link">
+                            <a href="./login.html">Next</a>
+                        </button>
+                        <button type="button" class=" btn-link" >
                             <a href="./login.html">Cancel</a></button>
-                           </div> 
+                          
                     </td>
                 </tr>
                 </div>
@@ -107,6 +117,92 @@
         </form>
         
     </div>
-    
+    <script>
+         var uName="";
+        var pswd="";
+        
+        var users=[];
+        var pMsg = "";
+        getInput();
+        function getInput(){
+            uName = document.getElementById('uName');
+           pswd = document.getElementById('pswd');
+           
+            pMsg = document.getElementById('pMsg');
+        }
+        function adduser(){
+            getInput();
+            //let product = [pName.value, pPrice.value, pQnty.value, pTotal.value];
+            //products.push(product);
+            let user = { "uName":uName.value,
+                            "pswd": pswd.value,
+                            
+            }
+            let apiURL = "https://retoolapi.dev/onXTmx/data";
+            fetch(apiURL, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json;charset=UTF-8'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(response => {
+                if(response.ok){
+                    pMsg.innerHTML = "User Registered Successfully";
+                    getUserData();
+                    
+                }
+            })
+        }
+        function getUserData(){
+            let apiURL = "https://retoolapi.dev/onXTmx/data";
+
+            fetch(apiURL)
+                .then(response => 
+                        { 
+                            if(response.ok)
+                                console.log("API call is Success");
+                            
+                            let data = response.json();
+                            console.log(data);
+                            return data;
+                        })
+                .then(data => { 
+                    console.log(data)
+                    users = data;
+                  
+                })
+                .catch( error => console.log(error))
+        }
+      function regex(){
+        let pswd=document.getElementById('pswd').value;
+        let pswdMsg=document.getElementById('pswdMsg');
+        let regex = new  RegExp('[0-9]');
+         regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&*-])[a-zA-z0-9!@#$&*-_]{5,12}$/
+        // regex=/^[0-9]{5}$/
+       let check= regex.test(pswd);
+       console.log(pswd);
+       console.log(check);
+       if(check==false){
+        pswdMsg.innerHTML = "Password should start with capital letter,should include 1 small char,1 number and 1 special char(!@#$&*) and atleast 5 chars length ";
+       }else{
+        pswdMsg.innerHTML ="";
+       }
+      }
+      function checkpswd(){
+        let pswd=document.getElementById('pswd').value;
+        let cpswd=document.getElementById('cpswd').value;
+        let cpswdMsg=document.getElementById('cpswdMsg');
+        console.log(pswd);
+        console.log(cpswd);
+
+        if (cpswd!=pswd){
+            cpswdMsg.innerHTML = "Password does not match ";
+        }else{
+        cpswdMsg.innerHTML ="";
+       }
+       
+      }
+    </script>
 </body>
 </html>
