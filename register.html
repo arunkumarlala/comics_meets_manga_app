@@ -97,7 +97,7 @@
                
                 <tr>
                     <td>
-                        <input type="checkbox" id="check" onclick="checkbox()" name="termscondi" value="terms"/> I agree to the terms and conditions of the cmm
+                        <input type="checkbox" id="check" onclick="register()" name="termscondi" value="terms"/> I agree to the terms and conditions of the cmm
                         <span style="color: rgb(205, 7, 7);" id="cboxMsg"></span>
                     </td>
                 </tr>
@@ -184,22 +184,28 @@
                 })
                 .catch( error => console.log(error))
         }
+        var regex2 = new  RegExp('[0-9]');
+        var regex1 = new  RegExp('[0-9]');
+        var regex0 = new  RegExp('[0-9]');
+        var check1= regex1.test(mail);
+        var check2= regex2.test(mnum);
+        var check= regex0.test(pswd);
       function regex(){
         let pswd=document.getElementById('pswd').value;
         let pswdMsg=document.getElementById('pswdMsg');
-        let regex = new  RegExp('[0-9]');
-         regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&*-])[a-zA-z0-9!@#$&*-_]{5,12}$/
+        let regex0 = new  RegExp('[0-9]');
+         regex0= /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&*-])[a-zA-z0-9!@#$&*-_]{5,12}$/
         // regex=/^[0-9]{5}$/
-       let check= regex.test(pswd);
+        check= regex0.test(pswd);
        console.log(pswd);
        console.log(check);
        if(check==false){
         pswdMsg.innerHTML = "Password should start with capital letter,should include 1 small char,1 number and 1 special char(!@#$&*) and atleast 5 chars length ";
-        document.getElementById("regbtn").style.display = "none";
+        // document.getElementById("regbtn").style.display = "none";
   
        }else{
         pswdMsg.innerHTML ="";
-        document.getElementById("regbtn").style.display = "block";
+        // document.getElementById("regbtn").style.display = "block";
        }
       }
       function mailreg(){
@@ -208,15 +214,15 @@
         let regex1 = new  RegExp('[0-9]');
          regex1 = /^(?=.*[@])(?=.*[.])(?=.*[a-z])(?=.*[0-9])[a-z0-9.@]{5,40}$/
         
-       let check1= regex1.test(mail);
+         check1= regex1.test(mail);
        console.log(mail);
        console.log(check1);
        if(check1==false){
         mailMsg.innerHTML = "Not a valid e-mail ";
-        document.getElementById("regbtn").style.display = "none";
+        // document.getElementById("regbtn").style.display = "none";
        }else{
         mailMsg.innerHTML ="";
-        document.getElementById("regbtn").style.display = "block";
+        // document.getElementById("regbtn").style.display = "block";
        }
       }
       function mobreg(){
@@ -224,16 +230,16 @@
         let mobMsg=document.getElementById('mobMsg');
         let regex2 = new  RegExp('[0-9]');
          regex2 = /^[6-9]+[0-9]{9}$/
-        
-       let check2= regex2.test(mnum);
+         check2= regex2.test(mnum);
+       
        console.log(mnum);
        console.log(check2);
        if(check2==false){
         mobMsg.innerHTML = "Not a valid phone number ";
-        document.getElementById("regbtn").style.display = "none";
+        // document.getElementById("regbtn").style.display = "none";
        }else{
         mobMsg.innerHTML ="";
-        document.getElementById("regbtn").style.display = "block";
+        // document.getElementById("regbtn").style.display = "block";
        }
       }
       function checkpswd(){
@@ -245,22 +251,27 @@
 
         if (cpswd!=pswd){
             cpswdMsg.innerHTML = "Password does not match ";
-            document.getElementById("regbtn").style.display = "none";
+            // document.getElementById("regbtn").style.display = "none";
         }else{
         cpswdMsg.innerHTML ="";
-        document.getElementById("regbtn").style.display = "block";
+        // document.getElementById("regbtn").style.display = "block";
        }
        
       }
-      function checkbox(){
+     
+      function register(){
+        let mail=document.getElementById('mail').value;
+        let mnum=document.getElementById('mnum').value;
         let checkBox=document.getElementById('check');
         let cboxMsg=document.getElementById('cboxMsg');
+        let pswd=document.getElementById('pswd').value;
+        let cpswd=document.getElementById('cpswd').value;
         console.log(checkBox.checked);
-        if (checkBox.checked == true){
+        if (checkBox.checked == true&&cpswd==pswd&&check2==true&&check1==true&&check==true){
             cboxMsg.innerHTML ="";
             document.getElementById("regbtn").style.display = "block";
-  } else if (checkBox.checked == false){
-        cboxMsg.innerHTML ="Checkbox is unchecked";
+  } else if (checkBox.checked == false||cpswd!=pswd||check2==false||check1==false||check==false){
+        cboxMsg.innerHTML ="Correct the error";
         document.getElementById("regbtn").style.display = "none";
        }
       }
