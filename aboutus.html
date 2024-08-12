@@ -11,29 +11,218 @@
     <style>
         .heading{
             text-align: center;
-            border-style: groove;
+            /* border-style: groove;
             border-color: blue;
-            background-color: rgb(103, 103, 243);
-            color: whitesmoke;
+            background-color: rgb(103, 103, 243); */
+            color: rgb(234, 228, 228);
         }
+        
         body {
-       background-size: cover;
-        background-image: url("./asserts/bg\ hxh.jpg");
+       background-size:cover;
+        background-image: url("./asserts/bg2.jpg");
+        
         background-repeat: no-repeat;
         }
-        p,dd,ul,li{
-            color: rgb(180, 15, 15);
-            font-size: x-large;
+        p,dd,ul,li,dt{
+            color: rgb(246, 244, 244);
+            font-size:20px;
         }
-        dt{
-            color: rgb(243, 234, 234);
-            font-size: x-large;
+        .box1 {
+  background-color: #000;
+  color: #fff;
+  opacity: .5;
+}
+.box2 {
+  background-color: rgba(7, 7, 7, 0.5);
+  color: #fff;
+}
+.wrapper {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+div.transbox {
+  margin: 30px;
+  background-color: rgba(29, 28, 28, 0.5);
+  border: 1px solid black;
+  opacity: 0.6;
+  color: #fff;
+}
+.card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 350px;
+    background: #262626;
+    overflow: hidden;
+}
+.card .imgBx,
+.card .details {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    box-sizing: border-box;
+    transition: .5s;
+}
+/* .card .imgBx1,
+.card .details {
+    width: 100%;
+    height: 100%;
+    position:relative;
+    box-sizing: border-box;
+    transition: .5s;
+} */
+.card .imgBx {
+    top: 0;
+    left: 0;
+}
+/* .card .imgBx1 {
+    top: 0;
+    left: 0;
+} */
+.card:hover .imgBx {
+    top: 0;
+    left: -100%;
+}
+/* .card:hover .imgBx1 {
+    top: 0;
+    left: -100%;
+} */
+.card .imgBx img {
+    width: 100%;
+}
+/* .card .imgBx1 img {
+    width: 100%;
+} */
+.card .details {
+    background: #262626;
+    top: 0;
+    left: 100%;
+    padding: 60px 30px;
+}
+.card:hover .details {
+    top: 0;
+    left: 0%;
+}
+.card .details h4 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    /* padding: 0 0 10px; */
+    border-bottom: 2px solid #fff;
+
+}
+.card .details h6 {
+    margin: 5px 0 0;
+    color: #fff;
+}
+img {
+  --s: 350px; /* the image size */
+  
+  width: var(350px);
+  height: var(350px); /* better than aspect-ratio in case the image has a height attribute */
+  box-sizing:border-box;
+  object-fit:fill;
+  cursor: pointer;
+  transition: .5s;
+}
+img.left {
+  object-position: right;
+  padding-left: var(--s);
+  background-image:url(./asserts/Screenshot\ 133.png);
+  background-size:350px 350px; 
+}
+img.right {
+  object-position: left;
+  padding-right: var(--s);
+  background-image:url(./asserts/Screenshot\ 12.png) ;
+  background-size:350px 350px;
+}
+img.top {
+  object-position: bottom;
+  padding-top: var(--s);
+  background-image:url(./asserts/Screenshot\ 11.png);
+  background-size:350px 350px;
+}
+img.bottom {
+  object-position: top;
+  padding-bottom: var(--s);
+  background-image:url(./asserts/Screenshot\ 44.png);
+  background-size:350px 350px;
+}
+
+img:hover {
+  padding: 0;
+}
+.bod {
+  margin: 0;
+  padding-top:3%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-content: center;
+  gap: 30px;
+  background-color: rgba(7, 7, 7, 0.5);
+  border: 1px solid black;
+  /* opacity: 0.6; */
+  color: antiquewhite;
+}
+.text {
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
         }
+        .wrapper.three {
+    background-color: black;
+}
+
+body{
+  background-color: #000;
+}
+.center{
+  position:relative;
+  text-align: center;
+  /* top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+}
+.center h1{
+  color: rgba(255,0,0,0.1);
+  font-size: 200px;
+  text-transform: uppercase;
+  font-weight: 1000;
+  background-size: contain;
+  background-image: url(./asserts/bacimg4.jpg);
+  -webkit-background-clip: text;
+  animation: background-text-animation 15s linear infinite;
+}
+@keyframes background-text-animation {
+  0%{
+    background-position: left 0px top 50%;
+  }
+  50%{
+    background-position: left 1500px top 50%;
+  }
+  100%{
+    background-position: left 0px top 50%;
+  }
+}
+    
     </style>
 </head>
 <body>
-    <div class="container " >
-        <h2 class="heading">ABOUT US</h2>
+    <div class="container">
+       <div class="center">
+  <h1>ABOUT US</h1>
+</div>
+        </div>
+
+<div class="container" style="text-align: justify;">
     <p>This app takes us through various comics and manga from japanese, korean and chinese language. This app also includes wallpapers of our favorite comics and characters and consists of various activities like click and paint and we can change attires and attributes of the character.</p>
     <dl>
         <dt>Anime</dt>
@@ -51,28 +240,52 @@
             <li>Coloring your favourite characters</li>
             <li>Customizing the costumes and attributes of the character</li>
         </dd>
-    <button type="button">
-        <a href="./profile_creation.html">Create Your Profile Here</a>
-    </button>
+    </div>
 </div>
-<script src="./controller.js"></script>  
-    <script>
-        function checkLogin(){
-            let uName = document.getElementById('uName').value;
-            let pswd = document.getElementById('pswd').value;
 
-            let sess = new UserSession();
-            sess.checkLogin(uName, pswd);
+  <div class=" container ">
+    <h3 style="color: antiquewhite;">The short history of manga and comics.</h3>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    
+    <div class=" col box box2"> <div class="card">
+        <div class="imgBx">
+            <img src="./asserts/gwp2.jpg" style="width: 300px;height: 350px;">
+        </div>
+        <div class="details">
+            <h4>Manga</h4>
+            <h6>In Japanese, "manga" refers to all kinds of cartooning, comics, and animation. Among English speakers, "manga" has the stricter meaning of "Japanese comics", in parallel to the usage of "anime" in and outside Japan. The term "ani-manga" is used to describe comics produced from animation cels.</h6>
+        </div>
+    </div></div>
+    <div class="col box box2">
+        <div class="card"> <div class="imgBx">
+        <img src="./asserts/cwp5.jpg"style="width: 300px;height: 350px;">
+    </div>
+    <div class="details">
+        <h4>Comics</h4>
+        <h6>Comics are a medium used to express ideas with images, often combined with text or other visual information. It typically takes the form of a sequence of panels of images. .Cartooning and other forms of illustration are the most common means of image-making in comics. </h6>
+    </div></div>
+</div>
+<div style="color: antiquewhite;"><h3>Preiview of this app</h3></div>
+<div class=" box  box2 bod  ">
+    <h3><img src="./asserts/Screenshot 111.png" class="top" width="350" height="350"  alt="a jellyfish">
+        <span>MAIN PAGE </span> </h3>
+    <h3><img src="./asserts/Screenshot 22.png" class="right" width="350" height="350"  alt="a jellyfish">
+        <span >MANGA,COMIC</span></h3>
+    <h3><img src="./asserts/Screenshot 13.png" class="left" width="350" height="350"  alt="a jellyfish">
+        <span>CLICK&PAINT  </span></h3>
+    <h3><img src="./asserts/Screenshot 144.png" class="bottom" width="350" height="350"  alt="a jellyfish">
+        <span>WALL PAPER</span></h3>
+</div>
+  </div>
+      <button  type="button" class=" btn btn-dark">
+        <a href="./profile_creation.html">Create Your Profile Here</a>
+       </button>
 
-            // if(uName == 'prajeethan' && pswd == 'playboy'){
-            //     localStorage.setItem('USER', uName);
-            //     window.location.href = './rrapp_aboutus.html';
-            // }else{
-            //     localStorage.removeItem('USER');
-            //     alert('Invalid Username/Password');
-            // }
-        }
-    </script>
+    
 </body>
 </html>
 

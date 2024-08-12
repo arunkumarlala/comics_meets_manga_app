@@ -11,23 +11,34 @@
     <style>
         .heading{
             text-align: center;
-            border-style: groove;
-            border-color: blue;
-            background-color: rgb(103, 103, 243);
+            /* border-style: groove;
+            border-color: blue; */
+            /* background-color: rgb(103, 103, 243); */
             color: whitesmoke;
         }
         body {
        background-size: cover;
-        background-image: url("./asserts/bg1.jpg");
+        background-image: url("./asserts/bookback.jpg");
         background-repeat: no-repeat;
         }
+        .box2 {
+  background-color: rgba(20, 20, 20, 0.5);
+  color:antiquewhite;
+}
+div.transbox {
+  margin: 30px;
+  background-color: #070707;
+  border: 1px solid black;
+  opacity: 0.6;
+  color:floralwhite;
+}
     </style>
 
 </head>
 <body>
     <div class="container">
         <h2 class="heading">User Registration</h2>
-        
+        <div class="box box2">
         <form action="./login.html" method="post">
             <table>
                 
@@ -103,19 +114,21 @@
                 </tr>
             </table>
                 <div>
-                    <tr>
-                    <td>
+                </div>
+                <div class="row p-2">
+                    <div class="col-m-2">
                         <button type="button" id="regbtn" style="display: none;" onclick="adduser()" class="btn btn-primary">
                             Register
-                        </button>
-                        <button type="button" class="btn-link">
-                            <a href="./login.html">Next</a>
-                        </button>
+                        </button></div>
+                        <div class="col-m-2">
+                        <button style="display: none;" type="button" id="nextbtn" class="btn-link " >
+                            <a href="./aboutus.html">Next</a>
+                        </button></div>
+                        <div class="col-m-2">
                         <button type="button" class=" btn-link" >
                             <a href="./login.html">Cancel</a></button>
-                          
-                    </td>
-                </tr>
+                        </div>
+                </div>
                 </div>
             
         </form>
@@ -160,6 +173,7 @@
                 if(response.ok){
                     pMsg.innerHTML = "User Registered Successfully";
                     getUserData();
+                    document.getElementById("nextbtn").style.display = "block";
                     
                 }
             })
