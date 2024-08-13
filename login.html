@@ -20,7 +20,9 @@
         background-image: url("./asserts/bg.jpg");
         background-repeat: no-repeat;
         }
-        
+        .btn:hover{
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -37,20 +39,20 @@
                     <td><input type="password" class="form-control" id="pswd" name="pwd"/></td>
                 </tr>
             </table>
-               <div class="row p-2">
-                <div class="col-m-2">
-                        <button type="button" onclick="checkLogin()" class="btn btn-link">
+            <div class="d-grid gap-2 my-3 mx-4 d-md-block">
+                
+                        <button type="button" onclick="checkLogin()" class="btn btn-dark">
                            Login
                         </button>
-                </div>
-                <div class="col-m-2">
-                    <button type="button" class="btn btn-link">
-                        <a href="./register.html">Register</a>
-                    </button>
-                </div>
-            <div class="col-m-2">
-                        <input type="reset" class="btn btn-danger" value="Exit"/>
-            </div>
+                
+              
+                    
+                        <a class="btn btn-dark" href="./register.html">Register</a>
+                    
+                
+           
+                        <button type="reset" class="btn btn-dark" value="Exit"/>Exit</button>
+            
                
         </div>
         </form>
